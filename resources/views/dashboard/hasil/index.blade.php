@@ -23,7 +23,7 @@
                         </svg>
                         Print Card
                     </button>
-                    <button href="#" class="btn btn-primary d-sm-none btn-icon" aria-label="Create new report">
+                    <button onclick="printCard()" class="btn btn-primary d-sm-none btn-icon" aria-label="Print Card">
                         <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
                             stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"

@@ -80,7 +80,10 @@
                                         $usaha->hasil->hasil_uji }}</a> --}}
                                     {{-- <embed src="{{ $usaha->hasil->hasil_uji }}" type="application/pdf"
                                         class="form-control" width="100%" /> --}}
-                                    <iframe src="{{ $usaha->hasil->hasil_bakteri }}" width="100%"></iframe>
+                                    {{-- <iframe src="{{ $usaha->hasil->hasil_bakteri }}" width="100%"></iframe> --}}
+                                    <iframe
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->hasil_bakteri }}"
+                                        width="100%"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Hasil Kimia</label>
