@@ -8,6 +8,10 @@
 <div class="page-body">
     <div class="container-xl">
         <div class="row row-deck row-cards">
+            <h2>Aplikasi Generate QR Code</h2>
+            <span>Generate QR Code untuk memudahkan dalam melakukan pemantauan pada setiap usaha yang telah
+                terverifikasi
+            </span>
             <div class="col-sm-6 col-lg-6">
                 <div class="card">
                     <div class="card-body">
@@ -25,29 +29,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="h1 mb-3">50 Usaha</div>
-                        <div class="d-flex mb-2">
-                            <div>Conversion rate</div>
-                            <div class="ms-auto">
-                                <span class="text-green d-inline-flex align-items-center lh-1">
-                                    7%
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M3 17l6 -6l4 4l8 -8" />
-                                        <path d="M14 7l7 0l0 7" />
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="progress progress-sm">
-                            <div class="progress-bar bg-primary" style="width: 75%" role="progressbar"
-                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="75% Complete">
-                                <span class="visually-hidden">75% Complete</span>
-                            </div>
-                        </div>
+                        <div class="h1 mb-3">{{ count($usahas) }} Usaha</div>
                     </div>
                 </div>
             </div>
@@ -69,29 +51,16 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-baseline">
-                            <div class="h1 mb-0 me-2">10 Usaha</div>
-                            <div class="me-auto">
-                                <span class="text-green d-inline-flex align-items-center lh-1">
-                                    8%
-                                    <!-- Download SVG icon from http://tabler-icons.io/i/trending-up -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon ms-1" width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M3 17l6 -6l4 4l8 -8" />
-                                        <path d="M14 7l7 0l0 7" />
-                                    </svg>
-                                </span>
-                            </div>
+                            <div class="h1 mb-3 me-2">{{ $countHasil }} Terverifikasi</div>
+
                         </div>
                     </div>
-                    <div id="chart-revenue-bg" class="chart-sm"></div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Tersertifikasi</h3>
+                        <h2>Tersertifikasi</h2>
                     </div>
                     <div class="card-body">
                         <button class="btn btn-outline-success my-2">
@@ -138,11 +107,7 @@
                                         <th>Jenis</th>
                                         <th>Usaha</th>
                                         <th>Pemilik</th>
-                                        <th>Hasil Bakteri</th>
-                                        <th>Hasil Kimia</th>
-                                        <th>Hasil Uji</th>
-                                        <th>Sertifikat Kesehatan</th>
-                                        <th>Sertifikat Makanan</th>
+                                        <th>QR Code</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -152,11 +117,7 @@
                                         <td>{{ $usaha->jenis_usaha ?? 'Kosong' }}</td>
                                         <td>{{ $usaha->nama_usaha ?? 'Kosong' }}</td>
                                         <td>{{ $usaha->pemilik_usaha ?? 'Kosong' }}</td>
-                                        <td>{{ $usaha->hasil->hasil_bakteri ?? 'Kosong' }}</td>
-                                        <td>{{ $usaha->hasil->hasil_kimia ?? 'Kosong' }}</td>
-                                        <td>{{ $usaha->hasil->hasil_uji ?? 'Kosong' }}</td>
-                                        <td>{{ $usaha->hasil->sertifikat_kesehatan ?? 'Kosong' }}</td>
-                                        <td>{{ $usaha->hasil->sertifikat_makanan ?? 'Kosong' }}</td>
+                                        <td>{!! QrCode::size(50)->generate(route('usaha.show', $usaha->id)); !!}</td>
                                     </tr>
                                     @empty
                                     <tr>

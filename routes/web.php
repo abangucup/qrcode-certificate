@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\PenilaianController;
+use App\Models\Hasil;
 use App\Models\Usaha;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $usahas = Usaha::all();
-    return view('dashboard.index', compact('usahas'));
+    $countHasil = Hasil::count();
+    return view('dashboard.index', compact('usahas', 'countHasil'));
 })->name('home');
 Route::resource('usaha', PenilaianController::class);
 Route::resource('hasil', HasilController::class);
