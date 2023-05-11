@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\HasilController;
+use App\Http\Controllers\PenilaianController;
+use App\Models\Usaha;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $usahas = Usaha::all();
+    return view('dashboard.index', compact('usahas'));
+})->name('home');
+Route::resource('usaha', PenilaianController::class);
+Route::resource('hasil', HasilController::class);
