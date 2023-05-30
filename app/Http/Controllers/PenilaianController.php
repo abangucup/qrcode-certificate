@@ -23,7 +23,6 @@ class PenilaianController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->all());
         $this->validate($request, [
             'pemilik_usaha' => 'required',
             'nama_usaha' => 'required',
@@ -85,7 +84,9 @@ class PenilaianController extends Controller
     public function destroy($id)
     {
         $usaha = Usaha::findOrFail($id);
-        $hasil = Hasil::findOrFail($usaha->id);
+        // dd($usaha);
+        $hasil = Hasil::where('usaha_id', $usaha->id)->first();
+        // dd($hasil);
 
         Storage::delete('public/sertifikat/' . $hasil->hasil_bakteri);
         Storage::delete('public/sertifikat/' . $hasil->hasil_kimia);
@@ -98,10 +99,10 @@ class PenilaianController extends Controller
         Storage::delete('public/sertifikat/' . $hasil->nib);
         Storage::delete('public/sertifikat/' . $hasil->izin_usaha);
 
-        $usaha->delete();
         $hasil->delete();
+        $usaha->delete();
 
-        Alert::toast('Berhasil hapus data', 'success');
+        // Alert::toast('Berhasil hapus data', 'success');
         return back();
     }
 }
