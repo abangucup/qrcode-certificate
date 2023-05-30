@@ -123,7 +123,7 @@
                                                         <path d="M16 5l3 3"></path>
                                                     </svg>
                                                     Edit</a>
-                                                {{-- <form id="form-delete-{{ $usaha->id }}"
+                                                <form id="form-delete-{{ $usaha->id }}"
                                                     action="{{ route('usaha.destroy', $usaha->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
@@ -141,15 +141,7 @@
                                                         <path d="M14 11l0 6"></path>
                                                         <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12"></path>
                                                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3"></path>
-                                                    </svg>Hapus</a> --}}
-                                                <form id="form-delete-{{ $usaha->id }}"
-                                                    action="{{ route('usaha.destroy', $usaha->id) }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                </form>
-                                                <a href="#"
-                                                    onclick="document.getElementById('form-delete-{{ $usaha->id }}').submit();"><em
-                                                        class="icon ni ni-trash-alt"></em><span>Hapus</span></a>
+                                                    </svg>Hapus</a>
                                             </td>
                                         </tr>
                                         @empty
