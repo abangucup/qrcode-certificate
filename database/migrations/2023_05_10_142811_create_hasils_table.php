@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('hasil_pemeriksaan')->nullable();
             $table->string('nib')->nullable();
             $table->string('izin_usaha')->nullable();
-            $table->foreignId('usaha_id')->constrained();
+            $table->foreignId('usaha_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
