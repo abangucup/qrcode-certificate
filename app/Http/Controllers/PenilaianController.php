@@ -197,10 +197,8 @@ class PenilaianController extends Controller
         return redirect()->route('usaha.index');
     }
 
-    public function destroy($id)
+    public function destroy(Usaha $usaha)
     {
-        $usaha = Usaha::findOrFail($id);
-
         $hasil = Hasil::findOrFail($usaha->id);
         if ($usaha->hasil->hasil_bakteri != null) {
             Storage::delete([
