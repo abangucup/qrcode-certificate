@@ -142,27 +142,27 @@ class PenilaianController extends Controller
         // Check if the files are uploaded and update them accordingly
 
         if ($request->hasFile('hasil_bakteri')) {
-            Storage::delete($usaha->hasil->hasil_bakteri);
+            Storage::delete($usaha->hasil->hasil_bakteri ?? '');
             $usaha->hasil->hasil_bakteri = $request->file('hasil_bakteri')->store('public/sertifikat');
         }
 
         if ($request->hasFile('hasil_kimia')) {
-            Storage::delete($usaha->hasil->hasil_kimia);
+            Storage::delete($usaha->hasil->hasil_kimia ?? '');
             $usaha->hasil->hasil_kimia = $request->file('hasil_kimia')->store('public/sertifikat');
         }
 
         if ($request->hasFile('hasil_fisik')) {
-            Storage::delete($usaha->hasil->hasil_fisik);
+            Storage::delete($usaha->hasil->hasil_fisik  ?? '');
             $usaha->hasil->hasil_fisik = $request->file('hasil_fisik')->store('public/sertifikat');
         }
 
         if ($request->hasFile('hasil_uji')) {
-            Storage::delete($usaha->hasil->hasil_uji);
+            Storage::delete($usaha->hasil->hasil_uji  ?? '');
             $usaha->hasil->hasil_uji = $request->file('hasil_uji')->store('public/sertifikat');
         }
 
         if ($request->hasFile('sertifikat_layak_sehat')) {
-            Storage::delete($usaha->hasil->sertifikat_layak_sehat);
+            Storage::delete($usaha->hasil->sertifikat_layak_sehat  ?? '');
             $usaha->hasil->sertifikat_layak_sehat = $request->file('sertifikat_layak_sehat')->store('public/sertifikat');
         }
 
@@ -172,22 +172,22 @@ class PenilaianController extends Controller
         }
 
         if ($request->hasFile('sertifikat_penjamak_pj')) {
-            Storage::delete($usaha->hasil->sertifikat_penjamak_pj);
+            Storage::delete($usaha->hasil->sertifikat_penjamak_pj ?? '');
             $usaha->hasil->sertifikat_penjamak_pj = $request->file('sertifikat_penjamak_pj')->store('public/sertifikat');
         }
 
         if ($request->hasFile('hasil_pemeriksaan')) {
-            Storage::delete($usaha->hasil->hasil_pemeriksaan);
+            Storage::delete($usaha->hasil->hasil_pemeriksaan ?? '');
             $usaha->hasil->hasil_pemeriksaan = $request->file('hasil_pemeriksaan')->store('public/sertifikat');
         }
 
         if ($request->hasFile('nib')) {
-            Storage::delete($usaha->hasil->nib);
+            Storage::delete($usaha->hasil->nib ?? '');
             $usaha->hasil->nib = $request->file('nib')->store('public/sertifikat');
         }
 
         if ($request->hasFile('izin_usaha')) {
-            Storage::delete($usaha->hasil->izin_usaha);
+            Storage::delete($usaha->hasil->izin_usaha ?? '');
             $usaha->hasil->izin_usaha = $request->file('izin_usaha')->store('public/sertifikat');
         }
 
