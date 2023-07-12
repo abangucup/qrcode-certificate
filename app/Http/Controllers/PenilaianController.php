@@ -199,7 +199,8 @@ class PenilaianController extends Controller
 
     public function destroy(Usaha $usaha)
     {
-        $hasil = Hasil::findOrFail($usaha->id);
+        $hasil = $usaha->hasil;
+
         if ($usaha->hasil->hasil_bakteri != null) {
             Storage::delete([
                 $hasil->hasil_bakteri,
