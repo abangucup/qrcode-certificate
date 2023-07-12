@@ -45,51 +45,56 @@ class PenilaianController extends Controller
         $usaha->jenis_usaha = $request->jenis_usaha;
         $usaha->save();
 
+        // Hasil::create([
+        //     'usaha_id' => $usaha->id,
+
+        // ]);
+        $hasil = new Hasil();
+        $hasil->usaha_id = $usaha->id;
+
         if ($request->file('hasil_bakteri')) {
             $hasilBakteriPath = $request->file('hasil_bakteri')->store('public/sertifikat');
+            $hasil->hasil_bakteri = $hasilBakteriPath;
         }
         if ($request->file('hasil_kimia')) {
             $hasilKimiaPath = $request->file('hasil_kimia')->store('public/sertifikat');
+            $hasil->hasil_kimia = $hasilKimiaPath;
         }
         if ($request->file('hasil_fisik')) {
             $hasilFisikPath = $request->file('hasil_fisik')->store('public/sertifikat');
+            $hasil->hasil_fisik = $hasilFisikPath;
         }
         if ($request->file('hasil_uji')) {
             $hasilUjiPath = $request->file('hasil_uji')->store('public/sertifikat');
+            $hasil->hasil_uji = $hasilUjiPath;
         }
         if ($request->file('sertifikat_layak_sehat')) {
             $sertLayakSehatPath = $request->file('sertifikat_layak_sehat')->store('public/sertifikat');
+            $hasil->sertifikat_layak_sehat = $sertLayakSehatPath;
         }
         if ($request->file('sertifikat_penjamak_makanan')) {
             $sertPenjamakMakananPath = $request->file('sertifikat_penjamak_makanan')->store('public/sertifikat');
+            $hasil->sertifikat_penjamak_makanan = $sertPenjamakMakananPath;
         }
         if ($request->file('sertifikat_penjamak_pj')) {
             $sertPenjamakPJPath = $request->file('sertifikat_penjamak_pj')->store('public/sertifikat');
+            $hasil->sertifikat_penjamak_pj = $sertPenjamakPJPath;
         }
         if ($request->file('hasil_pemeriksaan')) {
             $hasilPemeriksaanPath = $request->file('hasil_pemeriksaan')->store('public/sertifikat');
+            $hasil->hasil_pemeriksaan = $hasilPemeriksaanPath;
         }
         if ($request->file('nib')) {
             $nibPath = $request->file('nib')->store('public/sertifikat');
+            $hasil->nib = $nibPath;
         }
         if ($request->file('izin_usaha')) {
             $izinUsahaPath = $request->file('izin_usaha')->store('public/sertifikat');
+            $hasil->izin_usaha = $izinUsahaPath;
         }
 
+        $hasil->save();
 
-        Hasil::create([
-            'usaha_id' => $usaha->id,
-            'hasil_bakteri' => $hasilBakteriPath,
-            'hasil_kimia' => $hasilKimiaPath,
-            'hasil_fisik' => $hasilFisikPath,
-            'hasil_uji' => $hasilUjiPath,
-            'sertifikat_layak_sehat' => $sertLayakSehatPath,
-            'sertifikat_penjamak_makanan' => $sertPenjamakMakananPath,
-            'sertifikat_penjamak_pj' => $sertPenjamakPJPath,
-            'hasil_pemeriksaan' => $hasilPemeriksaanPath,
-            'nib' => $nibPath,
-            'izin_usaha' => $izinUsahaPath,
-        ]);
 
         Alert::toast('Berhasil simpan data', 'success');
         return redirect()->route('usaha.index');
