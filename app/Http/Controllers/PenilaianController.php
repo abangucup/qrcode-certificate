@@ -199,22 +199,26 @@ class PenilaianController extends Controller
 
     public function destroy($id)
     {
-        $hasil = Hasil::findOrFail($id);
+        $usaha = Usaha::findOrFail($id);
 
-        Storage::delete([
-            $hasil->hasil_bakteri,
-            $hasil->hasil_kimia,
-            $hasil->hasil_fisik,
-            $hasil->hasil_uji,
-            $hasil->sertifikat_layak_sehat,
-            $hasil->sertifikat_penjamak_makanan,
-            $hasil->sertifikat_penjamak_pj,
-            $hasil->hasil_pemeriksaan,
-            $hasil->nib,
-            $hasil->izin_usaha,
-        ]);
+        if ($usaha->hasil != null) {
 
-        $usaha = Usaha::where('id', $hasil->usaha_id)->first();
+            $hasil = Hasil::findOrFail($usaha->id);
+
+            Storage::delete([
+                $hasil->hasil_bakteri,
+                $hasil->hasil_kimia,
+                $hasil->hasil_fisik,
+                $hasil->hasil_uji,
+                $hasil->sertifikat_layak_sehat,
+                $hasil->sertifikat_penjamak_makanan,
+                $hasil->sertifikat_penjamak_pj,
+                $hasil->hasil_pemeriksaan,
+                $hasil->nib,
+                $hasil->izin_usaha,
+            ]);
+        }
+        // $usaha = Usaha::where('id', $hasil->usaha_id)->first();
         $usaha->delete();
 
         Alert::toast('Berhasil hapus data usaha', 'success');
