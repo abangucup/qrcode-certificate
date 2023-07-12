@@ -202,7 +202,6 @@ class PenilaianController extends Controller
         $usaha = Usaha::findOrFail($id);
 
         $hasil = Hasil::findOrFail($usaha->id);
-
         if ($usaha->hasil->hasil_bakteri != null) {
             Storage::delete([
                 $hasil->hasil_bakteri,
@@ -256,8 +255,6 @@ class PenilaianController extends Controller
             ]);
         }
 
-
-
         if ($usaha->hasil->nib != null) {
             Storage::delete([
                 $hasil->nib,
@@ -270,6 +267,7 @@ class PenilaianController extends Controller
         }
 
         // $usaha = Usaha::where('id', $hasil->usaha_id)->first();
+        $hasil->delete();
         $usaha->delete();
 
         Alert::toast('Berhasil hapus data usaha', 'success');
