@@ -201,23 +201,74 @@ class PenilaianController extends Controller
     {
         $usaha = Usaha::findOrFail($id);
 
-        if ($usaha->hasil != null) {
+        $hasil = Hasil::findOrFail($usaha->id);
 
-            $hasil = Hasil::findOrFail($usaha->id);
-
+        if ($usaha->hasil->hasil_bakteri != null) {
             Storage::delete([
                 $hasil->hasil_bakteri,
+
+            ]);
+        }
+
+        if ($usaha->hasil->hasil_kimia != null) {
+            Storage::delete([
                 $hasil->hasil_kimia,
+
+            ]);
+        }
+
+        if ($usaha->hasil->hasil_fisik != null) {
+            Storage::delete([
                 $hasil->hasil_fisik,
+
+            ]);
+        }
+
+        if ($usaha->hasil->hasil_uji != null) {
+            Storage::delete([
                 $hasil->hasil_uji,
+
+            ]);
+        }
+
+        if ($usaha->hasil->sertifikat_layak_sehat != null) {
+            Storage::delete([
                 $hasil->sertifikat_layak_sehat,
+            ]);
+        }
+
+        if ($usaha->hasil->sertifikat_penjamak_makanan != null) {
+            Storage::delete([
                 $hasil->sertifikat_penjamak_makanan,
+
+            ]);
+        }
+
+        if ($usaha->hasil->sertifikat_penjamak_pj != null) {
+            Storage::delete([
                 $hasil->sertifikat_penjamak_pj,
+            ]);
+        }
+
+        if ($usaha->hasil->hasil_pemeriksaan != null) {
+            Storage::delete([
                 $hasil->hasil_pemeriksaan,
+            ]);
+        }
+
+
+
+        if ($usaha->hasil->nib != null) {
+            Storage::delete([
                 $hasil->nib,
+            ]);
+        }
+        if ($usaha->hasil->izin_usaha != null) {
+            Storage::delete([
                 $hasil->izin_usaha,
             ]);
         }
+
         // $usaha = Usaha::where('id', $hasil->usaha_id)->first();
         $usaha->delete();
 
