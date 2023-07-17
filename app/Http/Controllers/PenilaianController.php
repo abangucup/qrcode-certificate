@@ -142,52 +142,52 @@ class PenilaianController extends Controller
         // Check if the files are uploaded and update them accordingly
 
         if ($request->hasFile('hasil_bakteri')) {
-            Storage::delete($usaha->hasil->hasil_bakteri ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_bakteri));
             $usaha->hasil->hasil_bakteri = 'storage/' . $request->file('hasil_bakteri')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('hasil_kimia')) {
-            Storage::delete($usaha->hasil->hasil_kimia ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_kimia));
             $usaha->hasil->hasil_kimia = 'storage/' . $request->file('hasil_kimia')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('hasil_fisik')) {
-            Storage::delete($usaha->hasil->hasil_fisik  ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_fisik));
             $usaha->hasil->hasil_fisik = 'storage/' . $request->file('hasil_fisik')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('hasil_uji')) {
-            Storage::delete($usaha->hasil->hasil_uji  ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_uji));
             $usaha->hasil->hasil_uji = 'storage/' . $request->file('hasil_uji')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('sertifikat_layak_sehat')) {
-            Storage::delete($usaha->hasil->sertifikat_layak_sehat  ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->sertifikat_layak_sehat));
             $usaha->hasil->sertifikat_layak_sehat = 'storage/' . $request->file('sertifikat_layak_sehat')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('sertifikat_penjamak_makanan')) {
-            Storage::delete($usaha->hasil->sertifikat_penjamak_makanan);
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->sertifikat_penjamak_makanan));
             $usaha->hasil->sertifikat_penjamak_makanan = 'storage/' . $request->file('sertifikat_penjamak_makanan')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('sertifikat_penjamak_pj')) {
-            Storage::delete($usaha->hasil->sertifikat_penjamak_pj ?? '');
+            Storage::delete(str_replace('storage/', '', $usaha->hasil->sertifikat_penjamak_pj));
             $usaha->hasil->sertifikat_penjamak_pj = 'storage/' . $request->file('sertifikat_penjamak_pj')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('hasil_pemeriksaan')) {
-            Storage::delete($usaha->hasil->hasil_pemeriksaan ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_pemeriksaan));
             $usaha->hasil->hasil_pemeriksaan = 'storage/' . $request->file('hasil_pemeriksaan')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('nib')) {
-            Storage::delete($usaha->hasil->nib ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->nib));
             $usaha->hasil->nib = 'storage/' . $request->file('nib')->store('sertifikat', 'public');
         }
 
         if ($request->hasFile('izin_usaha')) {
-            Storage::delete($usaha->hasil->izin_usaha ?? '');
+            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->izin_usaha));
             $usaha->hasil->izin_usaha = 'storage/' . $request->file('izin_usaha')->store('sertifikat', 'public');
         }
 
@@ -202,67 +202,74 @@ class PenilaianController extends Controller
         $hasil = $usaha->hasil;
 
         if ($usaha->hasil->hasil_bakteri != null) {
-            Storage::delete([
-                $hasil->hasil_bakteri,
-
-            ]);
+            Storage::delete(str_replace('storage/', 'public/', $hasil->hasil_bakteri));
         }
 
         if ($usaha->hasil->hasil_kimia != null) {
-            Storage::delete([
-                $hasil->hasil_kimia,
-
-            ]);
+            Storage::delete(str_replace('storage/', 'public/', $hasil->hasil_kimia));
         }
 
         if ($usaha->hasil->hasil_fisik != null) {
-            Storage::delete([
-                $hasil->hasil_fisik,
-
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->hasil_fisik
+            ));
         }
 
         if ($usaha->hasil->hasil_uji != null) {
-            Storage::delete([
-                $hasil->hasil_uji,
-
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->hasil_uji
+            ));
         }
 
         if ($usaha->hasil->sertifikat_layak_sehat != null) {
-            Storage::delete([
-                $hasil->sertifikat_layak_sehat,
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->sertifikat_layak_sehat
+            ));
         }
 
         if ($usaha->hasil->sertifikat_penjamak_makanan != null) {
-            Storage::delete([
-                $hasil->sertifikat_penjamak_makanan,
-
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->sertifikat_penjamak_makanan
+            ));
         }
 
         if ($usaha->hasil->sertifikat_penjamak_pj != null) {
-            Storage::delete([
-                $hasil->sertifikat_penjamak_pj,
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->sertifikat_penjamak_pj
+            ));
         }
 
         if ($usaha->hasil->hasil_pemeriksaan != null) {
-            Storage::delete([
-                $hasil->hasil_pemeriksaan,
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->hasil_pemeriksaan
+            ));
         }
 
         if ($usaha->hasil->nib != null) {
-            Storage::delete([
-                $hasil->nib,
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->nib
+            ));
         }
         if ($usaha->hasil->izin_usaha != null) {
-            Storage::delete([
-                $hasil->izin_usaha,
-            ]);
+            Storage::delete(str_replace(
+                'storage/',
+                'public/',
+                $hasil->izin_usaha
+            ));
         }
 
         // $usaha = Usaha::where('id', $hasil->usaha_id)->first();
