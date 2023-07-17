@@ -74,61 +74,61 @@
                                 <div class="mb-3">
                                     <label class="form-label">Hasil Bakteri</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->hasil_bakteri }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_bakteri) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Hasil Kimia</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->hasil_kimia }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_kimia) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Hasil Fisik</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->hasil_fisik }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_fisik) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Hasil Uji</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->hasil_uji }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_uji) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Hasil Pemeriksaan</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->hasil_pemeriksaan }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_pemeriksaan) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Sertifikat Layak Sehat</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->sertifikat_layak_sehat }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->sertifikat_layak_sehat) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Sertifikat Penjamak Makanan</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->sertifikat_penjamak_makanan }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->sertifikat_penjamak_makanan) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Sertifikat Penjamak Penanggung Jawab</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->sertifikat_penjamak_pj }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->sertifikat_penjamak_pj) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">NIB</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->nib }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->nib) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Izin Usaha</label>
                                     <iframe
-                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ $usaha->hasil->izin_usaha }}"
+                                        src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->izin_usaha) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                             </div>
