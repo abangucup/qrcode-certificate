@@ -55,74 +55,75 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Hasil Pemeriksaan Bakteri</label>
+                            <label class="form-label">HASIL PEMERIKSAAN LABORATORIUM</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="hasil_bakteri" />
-                                <small class="form-hint">Upload file hasil pemeriksaan bakteri.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">Hasil Pemeriksaan Kimia</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="hasil_kimia" />
                                 <small class="form-hint">Upload file hasil pemeriksaan kimia.</small>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
-                            <label class="form-label">Hasil Pemeriksaan Fisik</label>
+                            <label class="form-label">FORM INSPEKSI KESEHATAN LINGKUNGAN</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="hasil_fisik" />
-                                <small class="form-hint">Upload file hasil pemeriksaan fisik.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label class="form-label">Hasil Uji</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="hasil_uji" />
                                 <small class="form-hint">Upload file hasil uji.</small>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="mb-3">
-                            <label class="form-label">Sertifikat Layak Sehat</label>
+                            <label class="form-label">SERTIFIKAT LAIK HYGIENE SANITASI</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="sertifikat_layak_sehat" />
-                                <small class="form-hint">Upload file sertifikat layak sehat.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Sertifikat Penjamak Makanan</label>
+                            <label class="form-label">SERTIFIKAT PELATIHAN KEAMANAN PANGAN SIAP SAJI BAGI PENJAMAH
+                                PANGAN / SERTIFIKAT HYGIENE SANITASI BAGI OPERATOR DEPOT AIR MINUM</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="sertifikat_penjamak_makanan" />
-                                <small class="form-hint">Upload file sertifikat penjamak makanan.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Sertifikat Penjamak Penanggung
-                                Jawab</label>
+                            <label class="form-label">SERTIFIKAT PELATIHAN KEAMANAN PANGAN SIAP SAJI BAGI PENAGGUNG
+                                JAWAB / PEMILIK TPP</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="sertifikat_penjamak_pj" />
-                                <small class="form-hint">Upload file sertifikat penjamak penanggung jawab.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Hasil Pemeriksaan</label>
+                            <label class="form-label">HASIL VERIFIKASI LAPANGAN</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="hasil_pemeriksaan" />
-                                <small class="form-hint">Upload file sertifikat hasil pemeriksaan.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">NIB (Nomor Induk Berusaha)</label>
+                            <label class="form-label">NOMOR INDUK BERUSAHA (NIB)</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="nib" />
-                                <small class="form-hint">Upload file nomor induk berusaha (NIB).</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Surat Izin Usaha</label>
+                            <label class="form-label">SURAT REKOMENDASI</label>
                             <div class="col">
                                 <input type="file" class="form-control" name="izin_usaha" />
-                                <small class="form-hint">Upload file izin usaha.</small>
+                                <small class="form-hint">Upload file</small>
                             </div>
                         </div>
                     </div>

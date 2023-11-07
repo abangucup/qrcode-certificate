@@ -27,16 +27,18 @@ class PenilaianController extends Controller
             'pemilik_usaha' => 'required',
             'nama_usaha' => 'required',
             'jenis_usaha' => 'required',
-            'hasil_bakteri' => 'nullable|file',
-            'hasil_kimia' => 'nullable|file',
-            'hasil_fisik' => 'nullable|file',
-            'hasil_uji' => 'nullable|file',
-            'sertifikat_layak_sehat' => 'nullable|file',
-            'sertifikat_penjamak_makanan' => 'nullable|file',
-            'sertifikat_penjamak_pj' => 'nullable|file',
-            'hasil_pemeriksaan' => 'nullable|file',
-            'nib' => 'nullable|file',
-            'izin_usaha' => 'nullable|file',
+
+            'hasil_bakteri' => 'nullable|file', // HASIL PEMERIKSAAN LABORATORIUM
+
+            // 'hasil_kimia' => 'nullable|file', // HAPUS
+            'hasil_fisik' => 'nullable|file', //FORM INSPEKSI KESEHATAN LINGKUNGAN
+            // 'hasil_uji' => 'nullable|file', // HAPUS
+            'sertifikat_layak_sehat' => 'nullable|file', //SERTIFIKAT LAIK HYGIENE SANITASI
+            'sertifikat_penjamak_makanan' => 'nullable|file', //SERTIFIKAT PELATIHAN KEAMANAN PANGAN SIAP SAJI BAGI PENJAMAH PANGAN / SERTIFIKAT HYGIENE SANITASI BAGI OPERATOR DEPOT AIR MINUM
+            'sertifikat_penjamak_pj' => 'nullable|file', //SERTIFIKAT PELATIHAN KEAMANAN PANGAN SIAP SAJI BAGI PENAGGUNG JAWAB / PEMILIK TPP
+            'hasil_pemeriksaan' => 'nullable|file', // HASIL VERIFIKASI LAPANGAN
+            'nib' => 'nullable|file', //NOMOR INDUK BERUSAHA (NIB)
+            'izin_usaha' => 'nullable|file', //REKOMENDASI
         ]);
 
         $usaha = new Usaha();
@@ -56,18 +58,18 @@ class PenilaianController extends Controller
             $hasilBakteriPath = $request->file('hasil_bakteri')->store('sertifikat', 'public');
             $hasil->hasil_bakteri = 'storage/' . $hasilBakteriPath;
         }
-        if ($request->file('hasil_kimia')) {
-            $hasilKimiaPath = $request->file('hasil_kimia')->store('sertifikat', 'public');
-            $hasil->hasil_kimia = 'storage/' . $hasilKimiaPath;
-        }
+        // if ($request->file('hasil_kimia')) {
+        //     $hasilKimiaPath = $request->file('hasil_kimia')->store('sertifikat', 'public');
+        //     $hasil->hasil_kimia = 'storage/' . $hasilKimiaPath;
+        // }
         if ($request->file('hasil_fisik')) {
             $hasilFisikPath = $request->file('hasil_fisik')->store('sertifikat', 'public');
             $hasil->hasil_fisik = 'storage/' . $hasilFisikPath;
         }
-        if ($request->file('hasil_uji')) {
-            $hasilUjiPath = $request->file('hasil_uji')->store('sertifikat', 'public');
-            $hasil->hasil_uji = 'storage/' . $hasilUjiPath;
-        }
+        // if ($request->file('hasil_uji')) {
+        //     $hasilUjiPath = $request->file('hasil_uji')->store('sertifikat', 'public');
+        //     $hasil->hasil_uji = 'storage/' . $hasilUjiPath;
+        // }
         if ($request->file('sertifikat_layak_sehat')) {
             $sertLayakSehatPath = $request->file('sertifikat_layak_sehat')->store('sertifikat', 'public');
             $hasil->sertifikat_layak_sehat = 'storage/' . $sertLayakSehatPath;
@@ -122,9 +124,9 @@ class PenilaianController extends Controller
             'nama_usaha' => 'required',
             'jenis_usaha' => 'required',
             'hasil_bakteri' => 'nullable|mimes:pdf',
-            'hasil_kimia' => 'nullable|mimes:pdf',
+            // 'hasil_kimia' => 'nullable|mimes:pdf',
             'hasil_fisik' => 'nullable|mimes:pdf',
-            'hasil_uji' => 'nullable|mimes:pdf',
+            // 'hasil_uji' => 'nullable|mimes:pdf',
             'sertifikat_layak_sehat' => 'nullable|mimes:pdf',
             'sertifikat_penjamak_makanan' => 'nullable|mimes:pdf',
             'sertifikat_penjamak_pj' => 'nullable|mimes:pdf',
@@ -146,20 +148,20 @@ class PenilaianController extends Controller
             $usaha->hasil->hasil_bakteri = 'storage/' . $request->file('hasil_bakteri')->store('sertifikat', 'public');
         }
 
-        if ($request->hasFile('hasil_kimia')) {
-            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_kimia));
-            $usaha->hasil->hasil_kimia = 'storage/' . $request->file('hasil_kimia')->store('sertifikat', 'public');
-        }
+        // if ($request->hasFile('hasil_kimia')) {
+        //     Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_kimia));
+        //     $usaha->hasil->hasil_kimia = 'storage/' . $request->file('hasil_kimia')->store('sertifikat', 'public');
+        // }
 
         if ($request->hasFile('hasil_fisik')) {
             Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_fisik));
             $usaha->hasil->hasil_fisik = 'storage/' . $request->file('hasil_fisik')->store('sertifikat', 'public');
         }
 
-        if ($request->hasFile('hasil_uji')) {
-            Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_uji));
-            $usaha->hasil->hasil_uji = 'storage/' . $request->file('hasil_uji')->store('sertifikat', 'public');
-        }
+        // if ($request->hasFile('hasil_uji')) {
+        //     Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->hasil_uji));
+        //     $usaha->hasil->hasil_uji = 'storage/' . $request->file('hasil_uji')->store('sertifikat', 'public');
+        // }
 
         if ($request->hasFile('sertifikat_layak_sehat')) {
             Storage::delete(str_replace('storage/', 'public/', $usaha->hasil->sertifikat_layak_sehat));
@@ -205,9 +207,9 @@ class PenilaianController extends Controller
             Storage::delete(str_replace('storage/', 'public/', $hasil->hasil_bakteri));
         }
 
-        if ($usaha->hasil->hasil_kimia != null) {
-            Storage::delete(str_replace('storage/', 'public/', $hasil->hasil_kimia));
-        }
+        // if ($usaha->hasil->hasil_kimia != null) {
+        //     Storage::delete(str_replace('storage/', 'public/', $hasil->hasil_kimia));
+        // }
 
         if ($usaha->hasil->hasil_fisik != null) {
             Storage::delete(str_replace(
@@ -217,13 +219,13 @@ class PenilaianController extends Controller
             ));
         }
 
-        if ($usaha->hasil->hasil_uji != null) {
-            Storage::delete(str_replace(
-                'storage/',
-                'public/',
-                $hasil->hasil_uji
-            ));
-        }
+        // if ($usaha->hasil->hasil_uji != null) {
+        //     Storage::delete(str_replace(
+        //         'storage/',
+        //         'public/',
+        //         $hasil->hasil_uji
+        //     ));
+        // }
 
         if ($usaha->hasil->sertifikat_layak_sehat != null) {
             Storage::delete(str_replace(

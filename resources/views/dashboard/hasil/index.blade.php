@@ -57,7 +57,7 @@
                         {!! QrCode::size(300)->generate(route('usaha.show', $usaha->id)); !!}
                     </div>
                     <div class="card-body">
-                        <h2 class="mt-2">{{ $usaha->pemilik_usaha }}</h2>
+                        <h2 class="mt-2">{{ $usaha->nama_usaha }}</h2>
                         <ul class="list-unstyled space-y-1">
                             <li>
                                 <!-- Download SVG icon from http://tabler-icons.io/i/check -->

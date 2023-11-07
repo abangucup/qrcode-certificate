@@ -72,61 +72,66 @@
                             <!-- Photo -->
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <label class="form-label">Hasil Bakteri</label>
+                                    <label class="form-label">HASIL PEMERIKSAAN LABORATORIUM</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_bakteri) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label class="form-label">Hasil Kimia</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_kimia) }}"
                                         width="100%" height="400px"></iframe>
-                                </div>
+                                </div> --}}
                                 <div class="mb-3">
-                                    <label class="form-label">Hasil Fisik</label>
+                                    <label class="form-label">FORM INSPEKSI KESEHATAN LINGKUNGAN</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_fisik) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
-                                <div class="mb-3">
+                                {{-- <div class="mb-3">
                                     <label class="form-label">Hasil Uji</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_uji) }}"
                                         width="100%" height="400px"></iframe>
-                                </div>
+                                </div> --}}
                                 <div class="mb-3">
-                                    <label class="form-label">Hasil Pemeriksaan</label>
+                                    <label class="form-label">HASIL VERIFIKASI LAPANGAN</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->hasil_pemeriksaan) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Sertifikat Layak Sehat</label>
+                                    <label class="form-label">SERTIFIKAT LAIK HYGIENE SANITASI</label>
+
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->sertifikat_layak_sehat) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Sertifikat Penjamak Makanan</label>
+                                    <label class="form-label">SERTIFIKAT PELATIHAN KEAMANAN PANGAN SIAP SAJI BAGI
+                                        PENJAMAH
+                                        PANGAN / SERTIFIKAT HYGIENE SANITASI BAGI OPERATOR DEPOT AIR MINUM</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->sertifikat_penjamak_makanan) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Sertifikat Penjamak Penanggung Jawab</label>
+                                    <label class="form-label">SERTIFIKAT PELATIHAN KEAMANAN PANGAN SIAP SAJI BAGI
+                                        PENAGGUNG
+                                        JAWAB / PEMILIK TPP</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->sertifikat_penjamak_pj) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">NIB</label>
+                                    <label class="form-label">NOMOR INDUK BERUSAHA (NIB)</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->nib) }}"
                                         width="100%" height="400px"></iframe>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label">Izin Usaha</label>
+                                    <label class="form-label">SURAT REKOMENDASI</label>
                                     <iframe
                                         src="{{ asset('assets/pdf.js/web/viewer.html?file=') }}{{ asset($usaha->hasil->izin_usaha) }}"
                                         width="100%" height="400px"></iframe>
